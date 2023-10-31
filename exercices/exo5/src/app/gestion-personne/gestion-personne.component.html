@@ -1,0 +1,16 @@
+<p>gestion-personn<h2>Liste de Personnes</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Nom</th>
+          <th>Âge</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let personne of personnes">
+          <td>{{ personne.nom }}</td>
+          <td>{{ personne.age }}</td>
+        </tr>
+      </tbody>
+    </table>
+<p>the works!</p>
