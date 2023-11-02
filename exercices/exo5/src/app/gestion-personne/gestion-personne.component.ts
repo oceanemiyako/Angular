@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 interface Personne {
   nom: string;
+  prenom: string;
   age: number;
 }
 
