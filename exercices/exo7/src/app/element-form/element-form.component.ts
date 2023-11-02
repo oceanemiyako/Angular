@@ -24,5 +24,10 @@ export class ElementFormComponent {
     this.contactName = '';
     this.contactFirstname = '',
     this.contactEmail = '';
+
+    console.log(this.addContact);
   }
 }
+
+
+
