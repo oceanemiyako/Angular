@@ -1,0 +1,7 @@
+<ul>
+    <li *ngFor="let contact of contacts | orderBy: sortOption; let i = index">
+      {{ contact.name }} - {{ contact.email }}
+      <button (click)="deleteContact(i)">Supprimer</button>
+    </li>
+  </ul>
+  
