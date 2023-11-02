@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import Cat from '../../../models/Cat.model';
 
 @Component({
   selector: 'app-component-animal',
@@ -6,20 +7,32 @@ import { Component } from '@angular/core';
   styleUrls: ['./component-animal.component.css']
 })
 
-export class AppComponent {
-  newContact = {
-    name: '',
-    species: '',
-    age: 0
-  };
-  contacts: any[] = [];
+export class CatFormComponent {
+  firstname = ""
+  lastname = ""
+  email = ""
+  phoneNumber = ""
+  age = 0
 
-  addContact() {
-    this.contacts.push({ ...this.newContact }); 
-    this.newContact = {
-      name: '',
-      species: '',
-      age: 0
-    };
+  contacts: Cat[] = []
+
+  catFormSubmitHandler(event: Event) {
+    event.preventDefault()
+
+    const newCat = new Cat(
+      this.firstname,
+      this.lastname,
+      this.age
+    )
+
+    this.cats.push(newCat)
+
+    this.firstname = ""
+    this.lastname = ""
+    this.age = 0
+  }
+
+  deleteCatHandler(cat: Cat) {
+    this.cats = [...this.cats.filter(c => c !== cat)]
   }
 }
